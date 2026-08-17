@@ -1,0 +1,4 @@
+"use client";
+import { useEffect,useState } from "react";
+function getTimeLeft(targetDate){const d=new Date(targetDate).getTime()-Date.now();if(d<=0)return{days:0,hours:0,minutes:0,seconds:0,finished:true};return{days:Math.floor(d/86400000),hours:Math.floor(d/3600000%24),minutes:Math.floor(d/60000%60),seconds:Math.floor(d/1000%60),finished:false};}
+export default function Countdown({targetDate}){const[t,setT]=useState(()=>getTimeLeft(targetDate));useEffect(()=>{const x=setInterval(()=>setT(getTimeLeft(targetDate)),1000);return()=>clearInterval(x)},[targetDate]);if(t.finished)return <p className="countdown-finished">La celebración ya comenzó.</p>;return <div className="countdown">{[["Días",t.days],["Horas",t.hours],["Min",t.minutes],["Seg",t.seconds]].map(([l,v])=><div className="countdown-item" key={l}><span>{String(v).padStart(2,"0")}</span><small>{l}</small></div>)}</div>}
