@@ -1,12 +1,12 @@
 export const eventData = {
   celebrants: {
-    person1: "Homero",
-    person2: "Monica",
+    person1: "Monica",
+    person2: "Homero",
   },
 
-  eventDate: "2026-08-29T18:00:00-06:00",
+  eventDate: "2026-08-29T17:30:00-06:00",
   displayDate: "Sabado, 29 de agosto de 2026",
-  displayTime: "6:00 PM",
+  displayTime: "5:30 PM",
 
   backgroundImage: "/images/fondo.jpeg",
 
